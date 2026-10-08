@@ -1,0 +1,144 @@
+﻿<?php
+/* =====================================================================
+   SITE CONFIG â€” edit every placeholder in this ONE file to personalize
+   the portfolio. Anything wrapped like [YOUR NAME] must be replaced
+   with real information before sending the site to recruiters.
+   ===================================================================== */
+
+$SITE = [
+    'name'     => 'Elmuez Abdullah',
+    'role'     => 'Web Developer',
+    'tagline'  => 'Building modern, fast, and scalable web experiences that turn ideas into real products.',
+    'email'    => 'ezzoservice@gmail.com',
+    'phone'    => '+9660540612435',
+    'github'   => 'https://github.com/Almuez-abdo',
+    'cv'       => 'assets/cv.pdf', // place your real CV file at this path
+];
+
+/* Outgoing mail (contact form). Uses Gmail SMTP.
+   1. Enable 2-Step Verification on the Google account.
+   2. Create an App Password: Google Account â†’ Security â†’ App passwords.
+   3. Put that 16-letter password in 'pass' below (NOT your login password). */
+$MAIL = [
+    'host' => 'smtp.gmail.com',
+    'port' => 587,
+    'user' => 'ezzoservice@gmail.com',
+    'pass' => '[GMAIL-APP-PASSWORD]',
+    'to'   => 'ezzoservice@gmail.com',
+];
+/* About statistics â€” replace each value with a real number. */
+$STATS = [
+    ['value' => '5', 'label' => 'Years of Experience'],
+    ['value' => '8', 'label' => 'Projects Completed'],
+    ['value' => '10', 'label' => 'Technologies Used'],
+    ['value' => '8', 'label' => 'Happy Clients'],
+];
+
+/* Skills, grouped. Add/remove items freely. */
+$SKILLS = [
+    'Front-End' => ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    'Back-End'  => ['PHP', 'Node.js', 'REST APIs', 'MySQL'],
+    'Tools'     => ['Git', 'GitHub', 'VS Code', 'Figma', 'XAMPP'],
+];
+
+/* Featured project (large case-study card). */
+$FEATURED = [
+    'name'        => 'Ezzo Service â€” Bookstore Platform',
+    'image'       => 'layout/images/Ezzo_service/1.png',
+    'overview'    => 'A web platform for buying, selling, and exchanging used books, with categorized listings, user accounts, and order management.',
+    'challenge'   => 'Readers needed a single place to list their books for sale, find fairly priced used books, and arrange exchanges with other readers.',
+    'solution'    => 'I built a PHP/MySQL platform with book listings by section, a checkout flow that generates tracked order numbers, and a book-exchange request system with photo uploads.',
+    'tech'        => ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+    'features'    => ['Book listings with photos, condition, and price', 'Checkout with tracked order numbers and payments', 'Book exchange requests between users'],
+    'result'      => 'A complete working marketplace covering the full lifecycle: listing, purchase, and exchange.',
+    'demo'        => '../ezoService/index.php',
+    'github'      => '[GITHUB URL]',
+];
+
+/* Project cards. 'folder' must match a folder inside layout/images/.
+   'shots' = how many N.png screenshots that folder holds. */
+$PROJECTS = [
+    [
+        'name'   => 'Government Services Portal',
+        'folder' => 'comp', 'shots' => 6,
+        'desc'   => 'Service portal for police and civil-registry procedures with a service-center directory and news updates.',
+        'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
+        'demo'   => '../complaints/index.php', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'White Rose Clinic Website',
+        'folder' => 'white_rose', 'shots' => 6,
+        'desc'   => 'Clinic website with separate doctor and patient login areas and online consultation requests.',
+        'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
+        'demo'   => '../White_Rose/index.php', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'SEG Management System',
+        'folder' => 'seg', 'shots' => 6,
+        'desc'   => 'Personnel-affairs dashboard with employee records, request tracking, and announcements.',
+        'tech'   => ['PHP', 'MySQL', 'JavaScript'],
+        'demo'   => '../SEG/log.php', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Restaurant Website',
+        'folder' => 'restaurant', 'shots' => 6,
+        'desc'   => 'Cafeteria ordering system with staff login for managing daily meal orders.',
+        'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
+        'demo'   => '../restaurant/log.php', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Scale Line Company Website',
+        'folder' => 'Scale Line', 'shots' => 6,
+        'desc'   => 'Construction company website presenting services, projects, and contact information.',
+        'tech'   => ['HTML', 'CSS', 'JavaScript'],
+        'demo'   => '../Scale%20Line/index.html', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Rayo Marketing Website',
+        'folder' => 'Rayo_Markting', 'shots' => 6,
+        'desc'   => 'Marketing agency website with services, team members, and a project gallery.',
+        'tech'   => ['HTML', 'CSS', 'JavaScript'],
+        'demo'   => '../Rayo%20Company/Rayo.html', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Qudurat â€” Mobile App UI',
+        'folder' => 'qudurat', 'shots' => 6, 'portrait' => true,
+        'desc'   => 'Educational mobile app for general-aptitude test preparation, with subjects, practice tests, and subscriptions.',
+        'tech'   => ['Flutter', 'Android'],
+        'store'  => '[GOOGLE PLAY URL]', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Ezzo Service â€” Mobile App UI',
+        'folder' => 'Ezzo_service', 'shots' => 6, 'portrait' => true,
+        'desc'   => 'Bookstore mobile app with categorized book browsing, book details, and purchase flow.',
+        'tech'   => ['Flutter', 'Android'],
+        'store'  => '[GOOGLE PLAY URL]', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Job Opportunity â€” Mobile App UI',
+        'folder' => 'job_opportunity', 'shots' => 6, 'portrait' => true,
+        'desc'   => 'Job platform mobile app connecting recruitment agencies with job seekers through dedicated logins.',
+        'tech'   => ['Flutter', 'Android'],
+        'store'  => '[GOOGLE PLAY URL]', 'github' => '[GITHUB URL]',
+    ],
+    [
+        'name'   => 'Sado â€” Mobile App UI',
+        'folder' => 'sado', 'shots' => 6, 'portrait' => true,
+        'desc'   => 'Pharmaceutical supply mobile app linking companies, pharmacies, and labs, with orders, price lists, and statistics.',
+        'tech'   => ['Flutter', 'Android'],
+        'store'  => '[GOOGLE PLAY URL]', 'github' => '[GITHUB URL]',
+    ],
+];
+
+/* Services offered. */
+$SERVICES = [
+    ['t' => 'Website Development',            'd' => 'Modern, maintainable websites built with clean code and best practices.'],
+    ['t' => 'Responsive Web Design',          'd' => 'Layouts that look and work great on desktop, tablet, and mobile.'],
+    ['t' => 'Landing Page Development',       'd' => 'Fast, focused pages designed to convert visitors into customers.'],
+    ['t' => 'Front-End Development',          'd' => 'Interactive interfaces with HTML, CSS, JavaScript, and React.'],
+    ['t' => 'Web Application Development',    'd' => 'Dynamic apps with PHP or Node.js back ends and MySQL databases.'],
+    ['t' => 'API Integration',                'd' => 'Connect your site to third-party services through REST APIs.'],
+    ['t' => 'Performance Optimization',       'd' => 'Faster load times through image, asset, and code optimization.'],
+    ['t' => 'Website Maintenance',            'd' => 'Ongoing updates, fixes, and improvements to keep sites healthy.'],
+];
+
