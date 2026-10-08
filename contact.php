@@ -10,6 +10,16 @@ require_once __DIR__ . '/includes/lib/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+/* SMTP password: Vercel env var wins, local config fallback. */
+function mailPass() {
+    $env = getenv('GMAIL_APP_PASSWORD');
+    if ($env !== false && $env !== '') { return $env; }
+    global $MAIL;
+    $cfg = $MAIL['pass'] ?? '';
+    if ($cfg === '[GMAIL-APP-PASSWORD]') { return ''; }
+    return $cfg;
+}
+
 function fail($msg, $code = 422) {
     http_response_code($code);
     echo json_encode(['ok' => false, 'error' => $msg], JSON_UNESCAPED_UNICODE);
@@ -36,7 +46,7 @@ if ($name === '') { fail('Please enter your name.'); }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { fail('Please enter a valid email address.'); }
 if ($subject === '') { fail('Please enter a subject.'); }
 if (mb_strlen($message) < 10) { fail('Please write your message (10+ characters).'); }
-if (!isset($MAIL) || ($MAIL['pass'] ?? '') === '[GMAIL-APP-PASSWORD]') {
+if (!isset($MAIL) || mailPass() === '') {
     fail('Email delivery is not configured yet (missing app password).', 503);
 }
 
@@ -47,7 +57,7 @@ try {
     $mail->Port = (int) $MAIL['port'];
     $mail->SMTPAuth = true;
     $mail->Username = $MAIL['user'];
-    $mail->Password = $MAIL['pass'];
+    $mail->Password = mailPass();
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->CharSet = 'UTF-8';
     $mail->setFrom($MAIL['user'], 'Portfolio Contact Form');
