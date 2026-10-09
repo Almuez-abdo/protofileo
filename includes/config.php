@@ -62,7 +62,7 @@ $FEATURED = [
     'features'    => ['Book listings with photos, condition, and price', 'Checkout with tracked order numbers and payments', 'Book exchange requests between users'],
     'result'      => 'A complete working marketplace covering the full lifecycle: listing, purchase, and exchange.',
     'demo'        => '../ezoService/index.php',
-    'github'      => '[GITHUB URL]',
+    'github'      => 'https://github.com/Almuez-abdo/ezoService',
 ];
 
 /* Project cards. 'folder' must match a folder inside layout/images/.
@@ -73,7 +73,7 @@ $PROJECTS = [
         'folder' => 'comp', 'shots' => 6,
         'desc'   => 'Service portal for police and civil-registry procedures with a service-center directory and news updates.',
         'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
-        'demo'   => '../complaints/index.php', 'github' => '[GITHUB URL]',
+        'demo'   => '../complaints/index.php', 'github' => 'https://github.com/Almuez-abdo/complaints',
     ],
     [
         'name'   => 'White Rose Clinic Website',
@@ -87,7 +87,7 @@ $PROJECTS = [
         'folder' => 'seg', 'shots' => 6,
         'desc'   => 'Personnel-affairs dashboard with employee records, request tracking, and announcements.',
         'tech'   => ['PHP', 'MySQL', 'JavaScript'],
-        'demo'   => '../SEG/log.php', 'github' => '[GITHUB URL]',
+        'demo'   => '../SEG/log.php', 'github' => 'https://github.com/Almuez-abdo/SEG',
     ],
     [
         'name'   => 'Restaurant Website',
@@ -101,14 +101,14 @@ $PROJECTS = [
         'folder' => 'Scale Line', 'shots' => 6,
         'desc'   => 'Construction company website presenting services, projects, and contact information.',
         'tech'   => ['HTML', 'CSS', 'JavaScript'],
-        'demo'   => '../Scale%20Line/index.html', 'github' => '[GITHUB URL]',
+        'demo'   => '../Scale%20Line/index.html', 'github' => 'https://github.com/Almuez-abdo/Scale-Line',
     ],
     [
         'name'   => 'Rayo Marketing Website',
         'folder' => 'Rayo_Markting', 'shots' => 6,
         'desc'   => 'Marketing agency website with services, team members, and a project gallery.',
         'tech'   => ['HTML', 'CSS', 'JavaScript'],
-        'demo'   => '../Rayo%20Company/Rayo.html', 'github' => '[GITHUB URL]',
+        'demo'   => '../Rayo%20Company/Rayo.html', 'github' => 'https://github.com/Almuez-abdo/Rayo-Company',
     ],
     [
         'name'   => 'Qudurat â€” Mobile App UI',
