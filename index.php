@@ -161,10 +161,7 @@ function pf_slider($folder, $shots, $tall = false) {
       <div class="pf-card pf-showcase reveal" id="showcase">
         <ul class="slides showcase-slides" role="group" aria-label="Project showcase">
           <?php $fc = count($PROJECTS); $fi = 0; ?>
-          <?php foreach ($PROJECTS as $p): $fi++;
-            $fprev = ($fi - 1 < 1) ? $fc : $fi - 1;
-            $fnext = ($fi + 1 > $fc) ? 1 : $fi + 1;
-          ?>
+          <?php foreach ($PROJECTS as $p): $fi++; ?>
             <input type="radio" name="pf-feat" id="pf-f<?php echo $fi; ?>"<?php echo ($fi === 1) ? ' checked' : ''; ?>>
             <li class="slide-container">
               <div class="slide">
@@ -186,8 +183,8 @@ function pf_slider($folder, $shots, $tall = false) {
                 </div>
               </div>
               <div class="nav">
-                <label class="prev" for="pf-f<?php echo $fprev; ?>" aria-hidden="true">&#8249;</label>
-                <label class="next" for="pf-f<?php echo $fnext; ?>" aria-hidden="true">&#8250;</label>
+                <button type="button" class="prev" data-go="-1" aria-label="Previous project">&#8249;</button>
+                <button type="button" class="next" data-go="1" aria-label="Next project">&#8250;</button>
               </div>
             </li>
           <?php endforeach; ?>

@@ -251,6 +251,22 @@ section.pf-section { padding: 88px 0; }
   opacity: 0; transition: opacity 0.2s;
   user-select: none;
 }
+/* Showcase arrows are real buttons (always clickable, touch friendly). */
+#showcase .nav button {
+  width: 15%; height: 100%;
+  position: absolute; top: 0; z-index: 10; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 3rem; line-height: 1;
+  background: linear-gradient(90deg, rgba(0,0,0,0.35), transparent);
+  border: none; opacity: 0; transition: opacity 0.2s;
+  font-family: inherit;
+}
+#showcase .nav button.prev { left: 0; }
+#showcase .nav button.next { right: 0; background: linear-gradient(-90deg, rgba(0,0,0,0.35), transparent); }
+#showcase .slide-container:hover .nav button, #showcase .nav button:focus-visible { opacity: 0.9; }
+@media (hover: none) {
+  #showcase .nav button { opacity: 0.9; }
+}
 .nav label.prev { left: 0; }
 .nav label.next { right: 0; background: linear-gradient(-90deg, rgba(0,0,0,0.35), transparent); }
 .slide-container:hover .nav label, input:checked + .slide-container .nav label { display: flex; }

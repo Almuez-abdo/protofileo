@@ -113,8 +113,14 @@
       stop();
       timer = setInterval(tick, SHOWCASE_SECONDS * 1000);
     }
-    /* Any native radio change (arrow/dot click) restarts the countdown. */
+    /* Any native radio change (dot click) restarts the countdown. */
     box.addEventListener('change', restart);
+    /* Arrow buttons: one path for manual navigation. */
+    box.querySelectorAll('.nav button[data-go]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        go(current() + parseInt(btn.getAttribute('data-go'), 10));
+      });
+    });
     box.addEventListener('mouseenter', stop);
     box.addEventListener('mouseleave', restart);
     box.addEventListener('focusin', stop);
