@@ -25,7 +25,7 @@ function pf_slider($folder, $shots, $tall = false) {
         $first = $pfSlideN - $i + 1;
         $prevId = 'pf-s' . ($first + (($i + $shots - 2) % $shots));
         $nextId = 'pf-s' . ($first + ($i % $shots));
-        $src = 'layout/images/' . $folder . '/' . $i . '.png';
+        $src = 'layout/images/' . $folder . '/' . $i . '.png?v=2';
         echo '<input type="radio" name="pf-g' . $first . '" id="' . $id . '"' . $checked . '>';
         echo '<li class="slide-container"><div class="slide">';
         echo '<img src="' . htmlspecialchars($src) . '" alt="" loading="lazy">';
@@ -170,7 +170,7 @@ function pf_slider($folder, $shots, $tall = false) {
               <div class="slide">
                 <div class="pf-show-grid">
                   <div class="pf-show-media">
-                    <img src="<?php echo htmlspecialchars('layout/images/' . $p['folder'] . '/1.png'); ?>" alt="<?php echo htmlspecialchars($p['name']); ?> screenshot" loading="lazy">
+                    <img src="<?php echo htmlspecialchars('layout/images/' . $p['folder'] . '/1.png?v=2'); ?>" alt="<?php echo htmlspecialchars($p['name']); ?> screenshot" loading="lazy">
                   </div>
                   <div class="pf-show-body">
                     <span class="pf-kicker">Project <?php echo $fi; ?> of <?php echo $fc; ?></span>
