@@ -157,7 +157,7 @@ function pf_slider($folder, $shots, $tall = false) {
     <div class="pf-wrap">
       <span class="pf-kicker">Projects</span>
       <h2 class="pf-h2">Selected Work</h2>
-      <p class="pf-sub">One showcase, rotating through every project automatically — or browse with the arrows and dots.</p>
+      <p class="pf-sub">A tour of my best work — real projects, real results.</p>
       <div class="pf-card pf-showcase reveal" id="showcase">
         <ul class="slides showcase-slides" role="group" aria-label="Project showcase">
           <?php $fc = count($PROJECTS); $fi = 0; ?>
