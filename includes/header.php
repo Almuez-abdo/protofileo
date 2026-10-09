@@ -16,7 +16,7 @@ $metaDesc = 'Portfolio of ' . $SITE['name'] . ', a Web Developer building modern
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%2322d3ee' font-family='monospace' font-weight='bold'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="layout/css/bootstrap.min.css">
   <link rel="stylesheet" href="layout/css/all.css">
-  <link rel="stylesheet" href="layout/css/front.css?v=2">
+  <link rel="stylesheet" href="layout/css/front.css?v=3">
   <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
   <title><?php echo htmlspecialchars($pageTitle); ?></title>
   <script type="application/ld+json">

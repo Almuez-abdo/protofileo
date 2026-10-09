@@ -264,15 +264,17 @@ input:checked + .slide-container .slide { opacity: 1; position: relative; }
 /* Project showcase cards */
 .pf-showcase { padding: 0; overflow: hidden; }
 .showcase-slides { min-height: 440px; }
-.pf-show-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; }
-.pf-show-media { background: #05080e; min-height: 320px; }
+.pf-show-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 460px; }
+.pf-show-media { background: #05080e; height: 460px; }
 .pf-show-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .pf-show-body { padding: 38px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
 .pf-show-body h3 { margin: 0; font-size: 1.5rem; }
 .pf-show-body > p { margin: 0; }
+/* Showcase dots live in normal flow: always inside the card, centered. */
+#showcase .nav-dots { position: static; justify-content: center; padding: 16px 10px 20px; }
 @media (max-width: 860px) {
-  .pf-show-grid { grid-template-columns: 1fr; }
-  .pf-show-media { max-height: 300px; overflow: hidden; min-height: 0; }
+  .pf-show-grid { grid-template-columns: 1fr; min-height: 0; }
+  .pf-show-media { height: 300px; min-height: 0; max-height: none; overflow: hidden; }
   .pf-show-body { padding: 24px; }
 }
 

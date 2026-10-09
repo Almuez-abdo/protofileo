@@ -69,9 +69,10 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- Showcase: rotate across projects every 30 seconds -----
-     Change SHOWCASE_SECONDS to retime. Manual arrows/dots keep working. */
-  var SHOWCASE_SECONDS = 30;
+  /* ---------- Showcase: one timer, one go() path (manual + auto) -----
+     SHOWCASE_SECONDS: seconds between automatic switches (10).
+     Manual arrows/dots restart the countdown so jumps never surprise. */
+  var SHOWCASE_SECONDS = 10;
   var reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function paintDots(slider) {
@@ -87,7 +88,7 @@
   });
   var box = document.getElementById('showcase');
   if (box && !reduceMotion) {
-    var radios = box.querySelectorAll('input[type="radio"]');
+    var radios = box.querySelectorAll('#showcase input[type="radio"]');
     var timer = null;
     function current() {
       for (var i = 0; i < radios.length; i++) {
@@ -95,22 +96,30 @@
       }
       return 0;
     }
+    function go(n) {
+      var idx = ((n % radios.length) + radios.length) % radios.length;
+      radios[idx].checked = true;
+      paintDots(box);
+      restart();
+    }
+    function tick() {
+      if (document.hidden) { return; }
+      go(current() + 1);
+    }
     function stop() {
       if (timer) { clearInterval(timer); timer = null; }
     }
-    function start() {
+    function restart() {
       stop();
-      timer = setInterval(function () {
-        if (document.hidden) { return; }
-        radios[(current() + 1) % radios.length].checked = true;
-        paintDots(box);
-      }, SHOWCASE_SECONDS * 1000);
+      timer = setInterval(tick, SHOWCASE_SECONDS * 1000);
     }
+    /* Any native radio change (arrow/dot click) restarts the countdown. */
+    box.addEventListener('change', restart);
     box.addEventListener('mouseenter', stop);
-    box.addEventListener('mouseleave', start);
+    box.addEventListener('mouseleave', restart);
     box.addEventListener('focusin', stop);
-    box.addEventListener('focusout', start);
-    start();
+    box.addEventListener('focusout', restart);
+    restart();
   }
 
   /* ---------- Contact form: validate, then compose email ---------- */

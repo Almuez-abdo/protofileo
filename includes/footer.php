@@ -24,6 +24,6 @@
 
 <button class="pf-top" id="toTop" aria-label="Scroll back to top">↑</button>
 <script src="layout/js/bootstrap.bundle.min.js"></script>
-<script src="layout/js/bakap.js?v=4"></script>
+<script src="layout/js/bakap.js?v=5"></script>
 </body>
 </html>
