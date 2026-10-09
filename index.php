@@ -145,7 +145,6 @@ function pf_slider($folder, $shots, $tall = false) {
           </ul>
           <p><strong>Result:</strong> <?php echo htmlspecialchars($FEATURED['result']); ?></p>
           <div class="pf-proj-actions">
-            <a class="pf-btn pf-btn-sm" href="<?php echo htmlspecialchars($FEATURED['demo']); ?>">Live Demo</a>
             <a class="pf-btn-ghost pf-btn-sm" href="<?php echo htmlspecialchars($FEATURED['github']); ?>">GitHub</a>
           </div>
         </div>
@@ -172,8 +171,6 @@ function pf_slider($folder, $shots, $tall = false) {
               <div class="pf-proj-actions">
                 <?php if (isset($p['store'])): ?>
                   <a class="pf-btn pf-btn-sm" href="<?php echo htmlspecialchars($p['store']); ?>">Google Store</a>
-                <?php else: ?>
-                  <a class="pf-btn pf-btn-sm" href="<?php echo htmlspecialchars($p['demo']); ?>">Live Demo</a>
                 <?php endif; ?>
                 <a class="pf-btn-ghost pf-btn-sm" href="<?php echo htmlspecialchars($p['github']); ?>">GitHub</a>
               </div>

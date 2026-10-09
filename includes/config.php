@@ -51,8 +51,7 @@ $FEATURED = [
     'tech'        => ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
     'features'    => ['Book listings with photos, condition, and price', 'Checkout with tracked order numbers and payments', 'Book exchange requests between users'],
     'result'      => 'A complete working marketplace covering the full lifecycle: listing, purchase, and exchange.',
-    'demo'        => '../ezoService/index.php',
-    'github'      => '[GITHUB URL]',
+        'github'      => '[GITHUB URL]',
 ];
 
 /* Project cards. 'folder' must match a folder inside layout/images/.
@@ -63,42 +62,42 @@ $PROJECTS = [
         'folder' => 'comp', 'shots' => 6,
         'desc'   => 'Service portal for police and civil-registry procedures with a service-center directory and news updates.',
         'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
-        'demo'   => '../complaints/index.php', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'White Rose Clinic Website',
         'folder' => 'white_rose', 'shots' => 6,
         'desc'   => 'Clinic website with separate doctor and patient login areas and online consultation requests.',
         'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
-        'demo'   => '../White_Rose/index.php', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'SEG Management System',
         'folder' => 'seg', 'shots' => 6,
         'desc'   => 'Personnel-affairs dashboard with employee records, request tracking, and announcements.',
         'tech'   => ['PHP', 'MySQL', 'JavaScript'],
-        'demo'   => '../SEG/log.php', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'Restaurant Website',
         'folder' => 'restaurant', 'shots' => 6,
         'desc'   => 'Cafeteria ordering system with staff login for managing daily meal orders.',
         'tech'   => ['PHP', 'MySQL', 'Bootstrap'],
-        'demo'   => '../restaurant/log.php', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'Scale Line Company Website',
         'folder' => 'Scale Line', 'shots' => 6,
         'desc'   => 'Construction company website presenting services, projects, and contact information.',
         'tech'   => ['HTML', 'CSS', 'JavaScript'],
-        'demo'   => '../Scale%20Line/index.html', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'Rayo Marketing Website',
         'folder' => 'Rayo_Markting', 'shots' => 6,
         'desc'   => 'Marketing agency website with services, team members, and a project gallery.',
         'tech'   => ['HTML', 'CSS', 'JavaScript'],
-        'demo'   => '../Rayo%20Company/Rayo.html', 'github' => '[GITHUB URL]',
+        'github' => '[GITHUB URL]',
     ],
     [
         'name'   => 'Qudurat â€” Mobile App UI',
@@ -141,4 +140,5 @@ $SERVICES = [
     ['t' => 'Performance Optimization',       'd' => 'Faster load times through image, asset, and code optimization.'],
     ['t' => 'Website Maintenance',            'd' => 'Ongoing updates, fixes, and improvements to keep sites healthy.'],
 ];
+
 
