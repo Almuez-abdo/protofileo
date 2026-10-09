@@ -169,9 +169,6 @@ function pf_slider($folder, $shots, $tall = false) {
                 <?php foreach ($p['tech'] as $t): ?><li><?php echo htmlspecialchars($t); ?></li><?php endforeach; ?>
               </ul>
               <div class="pf-proj-actions">
-                <?php if (isset($p['store'])): ?>
-                  <a class="pf-btn pf-btn-sm" href="<?php echo htmlspecialchars($p['store']); ?>">Google Store</a>
-                <?php endif; ?>
                 <a class="pf-btn-ghost pf-btn-sm" href="<?php echo htmlspecialchars($p['github']); ?>">GitHub</a>
               </div>
             </div>
