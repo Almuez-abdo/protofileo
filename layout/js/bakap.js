@@ -69,18 +69,50 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- Slider dot highlight ---------- */
-  document.querySelectorAll('.slides').forEach(function (slider) {
+  /* ---------- Project galleries: autoplay inside each project ----------
+     Change AUTOPLAY_SECONDS to retime (e.g. 600 for 10 minutes). */
+  var AUTOPLAY_SECONDS = 10;
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sliders = Array.prototype.slice.call(document.querySelectorAll('.slides'));
+  sliders.forEach(function (slider, sIdx) {
     var dots = slider.querySelectorAll('.nav-dot');
-    if (!dots.length) { return; }
+    var radios = slider.querySelectorAll('input[type="radio"]');
+    if (!radios.length) { return; }
     function paint() {
-      var radios = slider.querySelectorAll('input[type="radio"]');
       radios.forEach(function (r, i) {
         if (dots[i]) { dots[i].classList.toggle('on', r.checked); }
       });
     }
     slider.addEventListener('change', paint);
     paint();
+    if (reduceMotion || radios.length < 2) { return; }
+    var timer = null;
+    function current() {
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) { return i; }
+      }
+      return 0;
+    }
+    function go(n) {
+      radios[n].checked = true;
+      paint();
+    }
+    function start() {
+      stop();
+      timer = setInterval(function () {
+        if (document.hidden) { return; }
+        go((current() + 1) % radios.length);
+      }, AUTOPLAY_SECONDS * 1000 + sIdx * 700);
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+    start();
   });
 
   /* ---------- Contact form: validate, then compose email ---------- */
