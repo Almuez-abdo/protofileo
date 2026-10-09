@@ -157,23 +157,46 @@ function pf_slider($folder, $shots, $tall = false) {
     <div class="pf-wrap">
       <span class="pf-kicker">Projects</span>
       <h2 class="pf-h2">Selected Work</h2>
-      <p class="pf-sub">Real projects with live screenshots. Use the arrows or dots on any card to browse its gallery.</p>
-      <div class="pf-grid-3">
-        <?php foreach ($PROJECTS as $p): ?>
-          <article class="pf-card pf-proj reveal">
-            <?php pf_slider($p['folder'], $p['shots'], !empty($p['portrait'])); ?>
-            <div class="pf-proj-body">
-              <h3><?php echo htmlspecialchars($p['name']); ?></h3>
-              <p><?php echo htmlspecialchars($p['desc']); ?></p>
-              <ul class="pf-tech">
-                <?php foreach ($p['tech'] as $t): ?><li><?php echo htmlspecialchars($t); ?></li><?php endforeach; ?>
-              </ul>
-              <div class="pf-proj-actions">
-                <a class="pf-btn-ghost pf-btn-sm" href="<?php echo htmlspecialchars($p['github']); ?>">GitHub</a>
+      <p class="pf-sub">One showcase, rotating through every project automatically — or browse with the arrows and dots.</p>
+      <div class="pf-card pf-showcase reveal" id="showcase">
+        <ul class="slides showcase-slides" role="group" aria-label="Project showcase">
+          <?php $fc = count($PROJECTS); $fi = 0; ?>
+          <?php foreach ($PROJECTS as $p): $fi++;
+            $fprev = ($fi - 1 < 1) ? $fc : $fi - 1;
+            $fnext = ($fi + 1 > $fc) ? 1 : $fi + 1;
+          ?>
+            <input type="radio" name="pf-feat" id="pf-f<?php echo $fi; ?>"<?php echo ($fi === 1) ? ' checked' : ''; ?>>
+            <li class="slide-container">
+              <div class="slide">
+                <div class="pf-show-grid">
+                  <div class="pf-show-media">
+                    <img src="<?php echo htmlspecialchars('layout/images/' . $p['folder'] . '/1.png'); ?>" alt="<?php echo htmlspecialchars($p['name']); ?> screenshot" loading="lazy">
+                  </div>
+                  <div class="pf-show-body">
+                    <span class="pf-kicker">Project <?php echo $fi; ?> of <?php echo $fc; ?></span>
+                    <h3><?php echo htmlspecialchars($p['name']); ?></h3>
+                    <p><?php echo htmlspecialchars($p['desc']); ?></p>
+                    <ul class="pf-tech">
+                      <?php foreach ($p['tech'] as $t): ?><li><?php echo htmlspecialchars($t); ?></li><?php endforeach; ?>
+                    </ul>
+                    <div class="pf-proj-actions">
+                      <a class="pf-btn-ghost pf-btn-sm" href="<?php echo htmlspecialchars($p['github']); ?>">GitHub</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </article>
-        <?php endforeach; ?>
+              <div class="nav">
+                <label class="prev" for="pf-f<?php echo $fprev; ?>" aria-hidden="true">&#8249;</label>
+                <label class="next" for="pf-f<?php echo $fnext; ?>" aria-hidden="true">&#8250;</label>
+              </div>
+            </li>
+          <?php endforeach; ?>
+          <li class="nav-dots" aria-hidden="true">
+            <?php for ($d = 1; $d <= $fc; $d++): ?>
+              <label class="nav-dot" for="pf-f<?php echo $d; ?>"></label>
+            <?php endfor; ?>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

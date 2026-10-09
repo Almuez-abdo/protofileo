@@ -69,24 +69,25 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- Project galleries: autoplay inside each project ----------
-     Change AUTOPLAY_SECONDS to retime (e.g. 600 for 10 minutes). */
-  var AUTOPLAY_SECONDS = 10;
+  /* ---------- Showcase: rotate across projects every 30 seconds -----
+     Change SHOWCASE_SECONDS to retime. Manual arrows/dots keep working. */
+  var SHOWCASE_SECONDS = 30;
   var reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sliders = Array.prototype.slice.call(document.querySelectorAll('.slides'));
-  sliders.forEach(function (slider, sIdx) {
+  function paintDots(slider) {
     var dots = slider.querySelectorAll('.nav-dot');
     var radios = slider.querySelectorAll('input[type="radio"]');
-    if (!radios.length) { return; }
-    function paint() {
-      radios.forEach(function (r, i) {
-        if (dots[i]) { dots[i].classList.toggle('on', r.checked); }
-      });
-    }
-    slider.addEventListener('change', paint);
-    paint();
-    if (reduceMotion || radios.length < 2) { return; }
+    radios.forEach(function (r, i) {
+      if (dots[i]) { dots[i].classList.toggle('on', r.checked); }
+    });
+  }
+  document.querySelectorAll('.slides').forEach(function (slider) {
+    slider.addEventListener('change', function () { paintDots(slider); });
+    paintDots(slider);
+  });
+  var box = document.getElementById('showcase');
+  if (box && !reduceMotion) {
+    var radios = box.querySelectorAll('input[type="radio"]');
     var timer = null;
     function current() {
       for (var i = 0; i < radios.length; i++) {
@@ -94,26 +95,23 @@
       }
       return 0;
     }
-    function go(n) {
-      radios[n].checked = true;
-      paint();
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
     }
     function start() {
       stop();
       timer = setInterval(function () {
         if (document.hidden) { return; }
-        go((current() + 1) % radios.length);
-      }, AUTOPLAY_SECONDS * 1000 + sIdx * 700);
+        radios[(current() + 1) % radios.length].checked = true;
+        paintDots(box);
+      }, SHOWCASE_SECONDS * 1000);
     }
-    function stop() {
-      if (timer) { clearInterval(timer); timer = null; }
-    }
-    slider.addEventListener('mouseenter', stop);
-    slider.addEventListener('mouseleave', start);
-    slider.addEventListener('focusin', stop);
-    slider.addEventListener('focusout', start);
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', start);
+    box.addEventListener('focusin', stop);
+    box.addEventListener('focusout', start);
     start();
-  });
+  }
 
   /* ---------- Contact form: validate, then compose email ---------- */
   var form = document.getElementById('contactForm');
