@@ -169,7 +169,7 @@ function pf_slider($folder, $shots, $tall = false) {
             <li class="slide-container">
               <div class="slide">
                 <div class="pf-show-grid">
-                  <div class="pf-show-media">
+                  <div class="pf-show-media<?php echo in_array($p['folder'], ['qudurat', 'Ezzo_service', 'job_opportunity', 'sado'], true) ? ' tall' : ''; ?>">
                     <img src="<?php echo htmlspecialchars('layout/images/' . $p['folder'] . '/1.png?v=2'); ?>" alt="<?php echo htmlspecialchars($p['name']); ?> screenshot" loading="lazy">
                   </div>
                   <div class="pf-show-body">
