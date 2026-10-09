@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 /* =====================================================================
-   SITE CONFIG â€” edit every placeholder in this ONE file to personalize
+   SITE CONFIG - edit every placeholder in this ONE file to personalize
    the portfolio. Anything wrapped like [YOUR NAME] must be replaced
    with real information before sending the site to recruiters.
    ===================================================================== */
@@ -17,7 +17,7 @@ $SITE = [
 
 /* Outgoing mail (contact form). Uses Gmail SMTP.
    1. Enable 2-Step Verification on the Google account.
-   2. Create an App Password: Google Account â†’ Security â†’ App passwords.
+   2. Create an App Password: Google Account > Security > App passwords.
    3. Put that 16-letter password in 'pass' below (NOT your login password). */
 $MAIL = [
     'host' => 'smtp.gmail.com',
@@ -27,7 +27,7 @@ $MAIL = [
     'to'   => 'ezzoservice@gmail.com',
 ];
 
-/* Local secrets override (never committed â€” see .gitignore).
+/* Local secrets override (never committed - see .gitignore).
    Copy config.local.example.php to config.local.php and put the real
    Gmail app password there. */
 if (is_file(__DIR__ . '/config.local.php')) {
@@ -36,7 +36,7 @@ if (is_file(__DIR__ . '/config.local.php')) {
         $MAIL = array_merge($MAIL, $LOCAL['MAIL']);
     }
 }
-/* About statistics â€” replace each value with a real number. */
+/* About statistics - replace each value with a real number. */
 $STATS = [
     ['value' => '5', 'label' => 'Years of Experience'],
     ['value' => '8', 'label' => 'Projects Completed'],
@@ -53,7 +53,7 @@ $SKILLS = [
 
 /* Featured project (large case-study card). */
 $FEATURED = [
-    'name'        => 'Ezzo Service â€” Bookstore Platform',
+    'name'        => 'Ezzo Service - Bookstore Platform',
     'image'       => 'layout/images/Ezzo_service/1.png',
     'overview'    => 'A web platform for buying, selling, and exchanging used books, with categorized listings, user accounts, and order management.',
     'challenge'   => 'Readers needed a single place to list their books for sale, find fairly priced used books, and arrange exchanges with other readers.',
@@ -111,28 +111,28 @@ $PROJECTS = [
         'demo'   => '../Rayo%20Company/Rayo.html', 'github' => 'https://github.com/Almuez-abdo/Rayo-Company',
     ],
     [
-        'name'   => 'Qudurat â€” Mobile App UI',
+        'name'   => 'Qudurat - Mobile App UI',
         'folder' => 'qudurat', 'shots' => 6, 'portrait' => true,
         'desc'   => 'Educational mobile app for general-aptitude test preparation, with subjects, practice tests, and subscriptions.',
         'tech'   => ['Flutter', 'Android'],
 'github' => '[GITHUB URL]',
     ],
     [
-        'name'   => 'Ezzo Service â€” Mobile App UI',
+        'name'   => 'Ezzo Service - Mobile App UI',
         'folder' => 'Ezzo_service', 'shots' => 6, 'portrait' => true,
         'desc'   => 'Bookstore mobile app with categorized book browsing, book details, and purchase flow.',
         'tech'   => ['Flutter', 'Android'],
 'github' => '[GITHUB URL]',
     ],
     [
-        'name'   => 'Job Opportunity â€” Mobile App UI',
+        'name'   => 'Job Opportunity - Mobile App UI',
         'folder' => 'job_opportunity', 'shots' => 6, 'portrait' => true,
         'desc'   => 'Job platform mobile app connecting recruitment agencies with job seekers through dedicated logins.',
         'tech'   => ['Flutter', 'Android'],
 'github' => '[GITHUB URL]',
     ],
     [
-        'name'   => 'Sado â€” Mobile App UI',
+        'name'   => 'Sado - Mobile App UI',
         'folder' => 'sado', 'shots' => 6, 'portrait' => true,
         'desc'   => 'Pharmaceutical supply mobile app linking companies, pharmacies, and labs, with orders, price lists, and statistics.',
         'tech'   => ['Flutter', 'Android'],
