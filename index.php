@@ -128,7 +128,7 @@ function pf_slider($folder, $shots, $tall = false) {
       <h2 class="pf-h2"><?php echo htmlspecialchars($FEATURED['name']); ?></h2>
       <p class="pf-sub">A closer look at my strongest piece of work.</p>
       <article class="pf-card pf-featured reveal">
-        <?php pf_slider('Ezzo_service', 3, true); ?>
+        <?php pf_slider('featured', 3, false); ?>
         <div class="pf-featured-body">
           <h3>Overview</h3>
           <p><?php echo htmlspecialchars($FEATURED['overview']); ?></p>
